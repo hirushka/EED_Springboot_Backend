@@ -38,6 +38,18 @@ public class UserDetails {
 	@Column(name ="role_id")
 	private int roleId;
 
+	public UserDetails(){}
+	public UserDetails(String firstName, String lastName, int empId, String designation, String empLocation,
+			int roleId) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.empId = empId;
+		this.designation = designation;
+		this.empLocation = empLocation;
+		this.roleId = roleId;
+	}
+
 	public int getId() {
 		return id;
 	}

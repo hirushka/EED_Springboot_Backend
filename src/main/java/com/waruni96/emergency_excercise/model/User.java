@@ -32,6 +32,14 @@ public class User {
 	@Column(name = "role_id")
 	private int roleId;
 
+	public User() {}
+	public User(String name, int roleId, String password, int userId) {
+		this.username = name;
+		this.roleId = roleId;
+		this.password = password;
+		this.userId = userId;
+	}
+
 	public int getId() {
 		return id;
 	}

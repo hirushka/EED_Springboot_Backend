@@ -22,7 +22,7 @@ public class DistanceRange {
 	private int id;
 	
 	@Column(name = "min_distance")
-	private int minDistance;
+	private String minDistance;
 	
 	@Column(name = "acc_id")
 	private int accId;
@@ -36,11 +36,11 @@ public class DistanceRange {
 		this.id = id;
 	}
 
-	public int getMinDistance() {
+	public String getMinDistance() {
 		return minDistance;
 	}
 
-	public void setMinDistance(int minDistance) {
+	public void setMinDistance(String minDistance) {
 		this.minDistance = minDistance;
 	}
 

@@ -28,7 +28,8 @@ import com.waruni96.emergency_excercise.repo.UserDetailsRepo;
 import com.waruni96.emergency_excercise.repo.UserRepo;
 import com.waruni96.emergency_excercise.security.JwtTokenProvider;
 import com.waruni96.emergency_excercise.service.AuthService;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @RestController
@@ -53,14 +54,17 @@ public class AuthController {
 	@Autowired
 	AuthService authService;
 
+	 private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
+	  
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-
+		logger.info("START >>> authenticateUser in AuthController");
 		return authService.authenticateUser(loginRequest);
 	}
 
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) throws ExecutionException, InterruptedException {
+		logger.info("START >>> registerUser in AuthController");
 		return authService.registerUser(signUpRequest);
 	}
 
